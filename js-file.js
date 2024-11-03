@@ -8,9 +8,7 @@ async function getWeather(location = "losangeles") {
     { mode: "cors" }
   );
   const weatherData = await response.json();
-  console.log(weatherData);
   const myWeather = parseWeather(weatherData);
-  console.log(myWeather);
   displayWeather(myWeather);
   return myWeather;
 }

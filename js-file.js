@@ -11,6 +11,7 @@ async function getWeather(location = "losangeles") {
   console.log(weatherData);
   const myWeather = parseWeather(weatherData);
   console.log(myWeather);
+  displayWeather(myWeather);
   return myWeather;
 }
 
@@ -31,5 +32,23 @@ const weatherForm = document.querySelector("#location-form");
 weatherForm.addEventListener("submit", () => {
   event.preventDefault();
   const location = document.querySelector("#location-input").value;
-  myWeather = getWeather(location);
+  getWeather(location);
 });
+
+function displayWeather(myWeather) {
+  const locationDataDisplay = document.querySelector("#location-data");
+  const conditionsDataDisplay = document.querySelector("#conditions-data");
+  const tempDataDisplay = document.querySelector("#temp-data");
+  const feelslikeDataDisplay = document.querySelector("#feelslike-data");
+  const humidityDataDisplay = document.querySelector("#humidity-data");
+  const precipDataDisplay = document.querySelector("#precip-data");
+  const uvindexDataDisplay = document.querySelector("#uvindex-data");
+
+  locationDataDisplay.textContent = myWeather.location;
+  conditionsDataDisplay.textContent = myWeather.conditions;
+  tempDataDisplay.textContent = myWeather.temp;
+  feelslikeDataDisplay.textContent = myWeather.feelslike;
+  humidityDataDisplay.textContent = myWeather.humidity;
+  precipDataDisplay.textContent = myWeather.precip;
+  uvindexDataDisplay.textContent = myWeather.uvindex;
+}

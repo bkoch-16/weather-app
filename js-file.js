@@ -11,6 +11,7 @@ async function getWeather(location = "losangeles") {
   console.log(weatherData);
   const myWeather = parseWeather(weatherData);
   console.log(myWeather);
+  return myWeather;
 }
 
 function parseWeather(weatherData) {
@@ -25,3 +26,10 @@ function parseWeather(weatherData) {
   };
   return myWeather;
 }
+
+const weatherForm = document.querySelector("#location-form");
+weatherForm.addEventListener("submit", () => {
+  event.preventDefault();
+  const location = document.querySelector("#location-input").value;
+  myWeather = getWeather(location);
+});

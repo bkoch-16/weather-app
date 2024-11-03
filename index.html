@@ -7,5 +7,46 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <form action="post" id="location-form">
+      <label for="location">
+        <span>Location:</span>
+        <input type="text" name="location" id="location-input" required />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="weather-container">
+      <div class="weather-fact">
+        <span class="title">Location:</span>
+        <span id="location-data"></span>
+      </div>
+
+      <div class="weather-fact">
+        <span class="title">Conditions:</span>
+        <span id="conditions-data"></span>
+      </div>
+
+      <div class="weather-fact">
+        <span class="title">Temperature:</span>
+        <span id="temp-data"></span>
+      </div>
+
+      <div class="weather-fact">
+        <span class="title">Feels like:</span>
+        <span id="feelslike-data"></span>
+      </div>
+      <div class="weather-fact">
+        <span class="title">Humidity:</span>
+        <span id="humidity-data"></span>
+      </div>
+      <div class="weather-fact">
+        <span class="title">Precipitation Chance:</span>
+        <span id="precip-data"></span>
+      </div>
+      <div class="weather-fact">
+        <span class="title">UV Index:</span>
+        <span id="uvindex-data"></span>
+      </div>
+    </div>
+  </body>
 </html>
